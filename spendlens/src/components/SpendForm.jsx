@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { runAudit } from "../utils/auditEngine"
 import { supabase } from "../utils/supabase"
-import ResultCard from "./ResultCard"
 import LeadCapture from "./LeadCapture"
 import AISummary from "./AISummary"
 
@@ -25,8 +24,6 @@ const SpendForm = () => {
     teamSize: 5,
     useCase: "Mixed",
   })
-
-  const [result, setResult] = useState(null)
 
   const [toolStack, setToolStack] = useState([])
 
@@ -110,8 +107,6 @@ const SpendForm = () => {
     const updatedTools = [...toolStack, newTool]
 
     setToolStack(updatedTools)
-
-    setResult(auditResult)
 
     // Total Savings
     const total = updatedTools.reduce(
@@ -475,16 +470,6 @@ const SpendForm = () => {
 
           </div>
 
-        )
-      }
-
-      {/* Single Result */}
-      {
-        result && (
-          <ResultCard
-            result={result}
-            tool={{ name: selectedTool }}
-          />
         )
       }
 
