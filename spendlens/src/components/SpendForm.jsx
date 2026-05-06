@@ -456,6 +456,7 @@ const SpendForm = () => {
               </div>
 
               <button
+                type="button"
                 onClick={handleCopy}
                 className="bg-green-900 hover:bg-green-800 px-8 py-5 rounded-2xl font-semibold"
               >
